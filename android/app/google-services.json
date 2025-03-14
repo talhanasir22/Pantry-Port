@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072272390210",
+    "project_id": "pantry-port",
+    "storage_bucket": "pantry-port.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072272390210:android:9ac58ebbe8a9a5ce4255db",
+        "android_client_info": {
+          "package_name": "com.example.pantryport_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp-uHhXfvHWVmAg6IkLTg8aH5hIZZ2_i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

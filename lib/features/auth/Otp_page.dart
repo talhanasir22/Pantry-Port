@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:hexagon/hexagon.dart';
 import '../../Core/appColors.dart';
 import '../../Core/apptext.dart';
+import '../../Data/Firebase/Services/phone_auth_services.dart';
 import '../../Shared/loading_indicator.dart';
 import '../../Shared/main_parallelogram.dart';
 import '../../Shared/shadow_parallelogram.dart';
@@ -18,6 +19,7 @@ class OtpPage extends StatefulWidget {
 class _OtpPageState extends State<OtpPage> {
   String selectedCountryCode = "+92";
   bool _isLoading = false;
+  final PhoneAuthService _authService = PhoneAuthService();
   final List<TextEditingController> _otpControllers =
   List.generate(4, (index) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(4, (index) => FocusNode());
@@ -162,24 +164,57 @@ class _OtpPageState extends State<OtpPage> {
                             height: 55,
                             width: MediaQuery.of(context).size.width * 0.90,
                             child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                String otp = _otpControllers.map((c) => c.text).join();
+
+                                if (otp.length < 4) {
+                                  // Show message if fields are empty
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(content: Text("Please fill all OTP fields"))
+                                  );
+                                  return;
+                                }
+
                                 setState(() {
                                   _isLoading = true;
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => LocationOptionPage()),
+                                  );
                                 });
-                                Navigator.push(context,
-                                    MaterialPageRoute(
-                                        builder: (context)=> LocationOptionPage(),
-                                ));
+
+                                bool isOtpValid =  await _authService.verifyOTP(otp) as bool;
+
+                                setState(() {
+                                  _isLoading = false;
+                                });
+
+                                if (isOtpValid) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => LocationOptionPage()),
+                                  );
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text("Invalid OTP, please try again")),
+                                  );
+                                }
                               },
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.bgColor,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10))),
+                                backgroundColor: AppColors.bgColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
                               child: _isLoading
                                   ? LoadingIndicator()
-                                  : Text("Submit", style: AppText.buttonTextStyle()),
+                                  : Text(
+                                "Submit",
+                                style: AppText.buttonTextStyle(),
+                              ),
                             ),
                           )
+
                         ],
                       ),
                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pantryport_app/features/home/map_page.dart';
 
 import '../../Core/appColors.dart';
 import '../../Core/apptext.dart';
@@ -76,10 +77,10 @@ class LocationOptionPage extends StatelessWidget{
                         width: MediaQuery.of(context).size.width * 0.90,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Navigator.push(context,
-                            //     MaterialPageRoute(
-                            //       builder: (context)=> LocationOptionPage(),
-                            //     ));
+                            Navigator.push(context,
+                                MaterialPageRoute(
+                                  builder: (context)=> MapPage(),
+                                ));
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.bgColor,
