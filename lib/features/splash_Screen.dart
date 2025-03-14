@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pantryport_app/features/onboarding/screen_one.dart';
 import 'package:pantryport_app/features/onboarding/wrapper.dart';
 import '../Core/appColors.dart';
 import '../Shared/circle.dart';

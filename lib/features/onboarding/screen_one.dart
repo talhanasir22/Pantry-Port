@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:pantryport_app/Core/appColors.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:pantryport_app/Core/apptext.dart';
+import 'package:pantryport_app/features/auth/role_selection_page.dart';
+
+import '../auth/login_page.dart';
 
 class ScreenOne extends StatefulWidget {
   const ScreenOne({super.key});
@@ -75,7 +78,9 @@ class _ScreenOneState extends State<ScreenOne> {
                     height: MediaQuery.of(context).size.height * 0.074,
                     width: MediaQuery.of(context).size.width * 0.90,
                     child: ElevatedButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> RoleSelectionPage()));
+                        },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.bgColor,
                         shape: RoundedRectangleBorder(
