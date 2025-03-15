@@ -8,13 +8,11 @@
 - **Shape Drawing with Code**: Allows users to draw various shapes through programming logic.
 - **Firebase Phone Authentication**: Secure login system with OTP verification.
 - **Google Maps Integration**: Location-based features for improved user experience.
-- **Real-time Data Handling**: Leverages Firebase for efficient data storage and retrieval.
 
 ## Tech Stack
 - **Frontend**: Flutter (for mobile development)
 - **Backend**: Firebase (Authentication, Firestore, and OTP verification)
 - **Google Maps API**: Integrated for location-based functionalities
-- **State Management**: Provider/Bloc (as per project requirement)
 
 ## Installation
 1. Clone the repository:
