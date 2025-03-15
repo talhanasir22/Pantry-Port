@@ -1,11 +1,10 @@
 # Pantary Port
 
 ## Overview
-**Pantary Port** is a feature-rich application designed to provide an intuitive and user-friendly interface for drawing shapes through coding, seamless Firebase authentication with OTP verification, and Google Maps API integration for enhanced location-based services.
+**Pantary Port** is a feature-rich application designed to provide an intuitive and user-friendly interface with shapes made through coding, seamless Firebase authentication with OTP verification, and Google Maps API integration for enhanced location-based services.
 
 ## Features
 - **User-Friendly Interface**: Smooth and interactive UI/UX for effortless navigation.
-- **Shape Drawing with Code**: Allows users to draw various shapes through programming logic.
 - **Firebase Phone Authentication**: Secure login system with OTP verification.
 - **Google Maps Integration**: Location-based features for improved user experience.
 
