@@ -4,6 +4,7 @@ import 'package:pantryport_app/Core/appColors.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:pantryport_app/Core/apptext.dart';
 import 'package:pantryport_app/Shared/DotIndicator.dart';
+import 'package:pantryport_app/Shared/get_started_button.dart';
 
 class ScreenThree extends StatelessWidget {
   const ScreenThree({super.key});
@@ -63,22 +64,7 @@ class ScreenThree extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 80,),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.074,
-                    width: MediaQuery.of(context).size.width * 0.90,
-                    child: ElevatedButton(
-                      onPressed: (){},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.bgColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                          )
-                      ),
-                      child: Text("Get Started",
-                        style: AppText.buttonTextStyle(),
-                      ),
-                    ),
-                  )
+                  GetStartedButton()
                 ],
               ),
             ),

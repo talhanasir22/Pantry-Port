@@ -4,6 +4,8 @@ import 'package:pantryport_app/features/onboarding/screen_one.dart';
 import 'package:pantryport_app/features/onboarding/screen_three.dart';
 import 'package:pantryport_app/features/onboarding/screen_two.dart';
 
+import '../home/role_selection_page.dart';
+
 class OnboardingWrapper extends StatefulWidget {
   const OnboardingWrapper({super.key});
 
@@ -22,7 +24,7 @@ class _OnboardingWrapperState extends State<OnboardingWrapper> {
   }
 
   void _skipOnboarding() {
-    print("Skipping Onboarding...");
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> RoleSelectionPage()));
   }
 
   @override

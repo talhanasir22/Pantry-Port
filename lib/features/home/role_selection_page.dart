@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:pantryport_app/features/auth/login_page.dart';
+import 'package:pantryport_app/features/home/locoation_option_page.dart';
 
 import '../../Core/appColors.dart';
 import '../../Core/apptext.dart';
@@ -122,11 +123,13 @@ class RoleSelectionPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
+                  Padding( 
                     padding: const EdgeInsets.all(18.0),
                     child: Align(
                       alignment: Alignment.bottomRight,
-                      child: TextButton(onPressed: (){},
+                      child: TextButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> LocationOptionPage()));
+                      },
                           child: Text("Skip Login",style: AppText.descriptionTextStyle(),))
                     ),
                   )

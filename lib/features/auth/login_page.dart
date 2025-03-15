@@ -165,9 +165,6 @@ class _LoginPageState extends State<LoginPage> {
                                   String formattedNumber = '$selectedCountryCode${_phoneNumberController.text.trim()}';
                                   await _authService.sendOTP(formattedNumber);
 
-                                  // Wait for 1 second before navigating
-                                  await Future.delayed(Duration(seconds: 1));
-
                                   if (mounted) {
                                      Navigator.push(context, MaterialPageRoute(builder: (context) => OtpPage()));
                                   }

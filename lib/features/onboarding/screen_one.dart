@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:pantryport_app/Core/appColors.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:pantryport_app/Core/apptext.dart';
-import 'package:pantryport_app/features/auth/role_selection_page.dart';
+import 'package:pantryport_app/Shared/get_started_button.dart';
+import 'package:pantryport_app/features/home/role_selection_page.dart';
 
 import '../auth/login_page.dart';
 
@@ -74,24 +75,7 @@ class _ScreenOneState extends State<ScreenOne> {
                     ),
                   ),
                   SizedBox(height: 80,),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.074,
-                    width: MediaQuery.of(context).size.width * 0.90,
-                    child: ElevatedButton(
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> RoleSelectionPage()));
-                        },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.bgColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                        )
-                      ),
-                        child: Text("Get Started",
-                          style: AppText.buttonTextStyle(),
-                        ),
-                    ),
-                  )
+                  GetStartedButton()
                 ],
               ),
             ),

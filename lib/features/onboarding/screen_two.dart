@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pantryport_app/Core/appColors.dart';
 import 'package:hexagon/hexagon.dart';
 import 'package:pantryport_app/Core/apptext.dart';
+import 'package:pantryport_app/Shared/get_started_button.dart';
 
 class ScreenTwo extends StatelessWidget {
   const ScreenTwo({super.key});
@@ -62,22 +63,7 @@ class ScreenTwo extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 80,),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.074,
-                    width: MediaQuery.of(context).size.width * 0.90,
-                    child: ElevatedButton(
-                      onPressed: (){},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.bgColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                          )
-                      ),
-                      child: Text("Get Started",
-                        style: AppText.buttonTextStyle(),
-                      ),
-                    ),
-                  )
+                  GetStartedButton()
                 ],
               ),
             ),

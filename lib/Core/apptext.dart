@@ -40,5 +40,12 @@ class AppText{
       fontWeight: FontWeight.w300,
     );
   }
+  static TextStyle AppbarTextStyle(){
+    return GoogleFonts.inter(
+      fontSize: 20,
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
 }

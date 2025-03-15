@@ -177,11 +177,8 @@ class _OtpPageState extends State<OtpPage> {
 
                                 setState(() {
                                   _isLoading = true;
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => LocationOptionPage()),
-                                  );
-                                });
+                                }
+                                );
 
                                 bool isOtpValid =  await _authService.verifyOTP(otp) as bool;
 
